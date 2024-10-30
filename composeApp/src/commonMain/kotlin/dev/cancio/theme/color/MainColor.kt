@@ -1,5 +1,6 @@
 package dev.cancio.theme.color
 
+import androidx.compose.material.Colors
 import androidx.compose.ui.graphics.Color
 
 private val purple01 = Color(0XFF16031D)
@@ -22,8 +23,8 @@ private val green01 = Color(0XFF2B6D41)
 private val green02 = Color(0XFF4AE37D)
 
 enum class MagicMathColor(
-    dark: Color,
-    light: Color
+    val dark: Color,
+    val light: Color
 ){
     BACKGROUND_PRIMARY(purple03,purple08),
     BACKGROUND_SECONDARY(purple07,purple05),

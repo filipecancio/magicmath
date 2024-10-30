@@ -11,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
+import dev.cancio.presentation.home.HomeScreen
 import dev.cancio.theme.icons.MagicMathIcon
 import dev.cancio.theme.icons.core.Star
 import magicmath.composeapp.generated.resources.Res
@@ -25,11 +26,7 @@ fun App() {
     MaterialTheme {
         Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
 
-
-            Text(
-                "MagicMath",
-                fontFamily = comboFamily
-            )
+            HomeScreen()
             Icon(
                 MagicMathIcon.Star,
                 null,
