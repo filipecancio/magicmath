@@ -1,6 +1,7 @@
 package dev.cancio.presentation.home
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Scaffold
@@ -9,6 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import dev.cancio.components.star.StarBackground
+import dev.cancio.components.star.StarIcon
 import dev.cancio.theme.color.MagicMathColor
 import dev.cancio.theme.component.ActionBtn
 import dev.cancio.theme.component.ActionBtnType
@@ -19,35 +22,38 @@ import dev.cancio.theme.font.NORMAL
 @Composable
 fun HomeScreen() {
     Scaffold(){
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Top,
-            modifier = Modifier.padding(horizontal = 24.dp)
-                .padding(top = 100.dp)
-        ) {
+        Box{
+            StarBackground()
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.Top,
+                modifier = Modifier.padding(horizontal = 24.dp)
+                    .padding(top = 100.dp)
+            ) {
 
-            Text(
-                "Magic Math",
-                style = H1(),
-                color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
-            )
-            Column {
                 Text(
-                    "Divirta-se com esse joguinho de matemática",
-                    style = H3(),
+                    "Magic Math",
+                    style = H1(),
                     color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
                 )
-                Text(
-                    "Com a ajuda da matemática, vamos adivinhar um número que você está pensando.",
-                    style = NORMAL(),
-                    color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
-                )
-            }
+                Column {
+                    Text(
+                        "Divirta-se com esse joguinho de matemática",
+                        style = H3(),
+                        color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
+                    )
+                    Text(
+                        "Com a ajuda da matemática, vamos adivinhar um número que você está pensando.",
+                        style = NORMAL(),
+                        color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
+                    )
+                }
 
-            Column {
-                ActionBtn("Começar", ActionBtnType.ATC){}
-                ActionBtn("Primeira vez", ActionBtnType.PRIMARY){}
-                ActionBtn("Sobre", ActionBtnType.NONE){}
+                Column {
+                    ActionBtn("Começar", ActionBtnType.ATC) {}
+                    ActionBtn("Primeira vez", ActionBtnType.PRIMARY) {}
+                    ActionBtn("Sobre", ActionBtnType.NONE) {}
+                }
             }
         }
     }

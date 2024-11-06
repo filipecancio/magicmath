@@ -1,8 +1,15 @@
 package dev.cancio.theme.color
 
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.Colors
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.graphics.Color
 
 private val purple01 = Color(0XFF16031D)
@@ -35,7 +42,8 @@ enum class MagicMathColor(
     ATC(green01,green02),
     NEGATIVE(red01,red02),
     ATTENTION(purple01,pink),
-    NONE(Color.Transparent,Color.Transparent);
+    NONE(Color.Transparent,Color.Transparent),
+    WHITE(white, white);
 
     @Composable
     fun toColor() = if (isSystemInDarkTheme()) this.dark else this.light
@@ -57,3 +65,20 @@ fun getMagicMathColor(): Colors = Colors(
     onError = MagicMathColor.ATTENTION.toColor(),
     isLight = isSystemInDarkTheme()
 )
+
+@Composable
+fun blinkWhite(): Color {
+    val infiniteTransition = rememberInfiniteTransition(label = "blinkWhite")
+    val color = if(isSystemInDarkTheme()) white else purple05
+
+    val offset by infiniteTransition.animateFloat(
+        initialValue= 0.2f,
+        targetValue = 0.7f,
+        animationSpec = infiniteRepeatable(
+            animation = tween(3000, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "blinkWhite"
+    )
+    return color.copy(alpha = offset)
+}
