@@ -16,16 +16,19 @@ fun HomeScreen() {
 
         Text(
             "Magic Math",
-            style = H1()
+            style = H1(),
+            color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
         )
         Column {
             Text(
                 "Divirta-se com esse joguinho de matemática",
-                style = H3()
+                style = H3(),
+                color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
             )
             Text(
                 "Com a ajuda da matemática, vamos adivinhar um número que você está pensando.",
-                style = NORMAL()
+                style = NORMAL(),
+                color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
             )
         }
 

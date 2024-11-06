@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -23,14 +24,16 @@ fun App() {
         colors = getMagicMathColor(),
         typography = MagicMathType()
     ) {
-        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
+        Surface {
+            Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
 
-            HomeScreen()
-            Icon(
-                MagicMathIcon.Star,
-                null,
-                modifier = Modifier.size(100.dp)
-            )
+                HomeScreen()
+                Icon(
+                    MagicMathIcon.Star,
+                    null,
+                    modifier = Modifier.size(100.dp)
+                )
+            }
         }
     }
 }

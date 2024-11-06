@@ -27,7 +27,7 @@ fun ActionBtn(
             height = 62.dp
             )
             .background(
-                type.bgColor,
+                type.bgColor.toColor(),
                 RoundedCornerShape(15.dp)
             )
             .clickable { onClick() }
@@ -36,19 +36,19 @@ fun ActionBtn(
         Text(
             text,
             style = NORMAL(),
-            color = type.textColor
+            color = type.textColor.toColor()
         )
     }
 }
 
 enum class ActionBtnType(
-    val bgColor: Color = Color.Transparent,
-    val textColor: Color = MagicMathColor.BUTTON_SECONDARY.dark
+    val bgColor: MagicMathColor = MagicMathColor.NONE,
+    val textColor: MagicMathColor = MagicMathColor.BUTTON_SECONDARY
 ) {
-    PRIMARY(MagicMathColor.BUTTON_PRIMARY.dark),
-    SECONDARY(MagicMathColor.BUTTON_SECONDARY.dark),
-    NEGATIVE(MagicMathColor.NEGATIVE.dark),
-    GITHUB(MagicMathColor.ATC.dark),
-    ATC(MagicMathColor.ATC.dark),
-    NONE
+    PRIMARY(MagicMathColor.BUTTON_PRIMARY),
+    SECONDARY(MagicMathColor.BUTTON_SECONDARY),
+    NEGATIVE(MagicMathColor.NEGATIVE),
+    GITHUB(MagicMathColor.ATC),
+    ATC(MagicMathColor.ATC),
+    NONE(MagicMathColor.NONE)
 }
