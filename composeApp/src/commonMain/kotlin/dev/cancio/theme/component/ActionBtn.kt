@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
@@ -30,7 +31,8 @@ fun ActionBtn(
                 type.bgColor.toColor(),
                 RoundedCornerShape(15.dp)
             )
-            .clickable { onClick() }
+            .clickable { onClick() },
+        contentAlignment = Alignment.Center
 
     ){
         Text(

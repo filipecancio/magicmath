@@ -8,6 +8,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import magicmath.composeapp.generated.resources.Res
+import magicmath.composeapp.generated.resources.abel
 import magicmath.composeapp.generated.resources.combo
 import org.jetbrains.compose.resources.Font
 
@@ -16,7 +17,7 @@ import org.jetbrains.compose.resources.Font
 fun getComboFamily() = FontFamily(Font(Res.font.combo))
 
 @Composable
-fun getAbelFamily() = FontFamily(Font(Res.font.combo))
+fun getAbelFamily() = FontFamily(Font(Res.font.abel))
 
 @Composable
 fun TITLE() = TextStyle(

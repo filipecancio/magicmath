@@ -36,7 +36,12 @@ fun HomeScreen() {
                     style = H1(),
                     color = MagicMathColor.BACKGROUND_SECONDARY.toColor()
                 )
-                Column {
+                Column(
+                    modifier = Modifier
+                        .padding(top = 115.dp)
+                        .padding(end = 50.dp),
+                    verticalArrangement = Arrangement.spacedBy(8.dp)
+                ) {
                     Text(
                         "Divirta-se com esse joguinho de matemática",
                         style = H3(),
@@ -49,7 +54,12 @@ fun HomeScreen() {
                     )
                 }
 
-                Column {
+                Column(
+                    modifier = Modifier
+                        .padding(top = 50.dp),
+                    horizontalAlignment = Alignment.CenterHorizontally,
+                    verticalArrangement = Arrangement.spacedBy(16.dp)
+                ) {
                     ActionBtn("Começar", ActionBtnType.ATC) {}
                     ActionBtn("Primeira vez", ActionBtnType.PRIMARY) {}
                     ActionBtn("Sobre", ActionBtnType.NONE) {}
