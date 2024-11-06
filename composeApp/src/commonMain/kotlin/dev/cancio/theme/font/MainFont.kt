@@ -1,7 +1,8 @@
 package dev.cancio.theme.font
 
+import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Typography
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -63,3 +64,6 @@ fun NORMAL() = TextStyle(
     fontSize = 20.sp,
     lineHeight = 22.sp
 )
+
+@Composable
+fun MagicMathType(): Typography = MaterialTheme.typography
