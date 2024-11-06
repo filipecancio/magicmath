@@ -67,7 +67,7 @@ fun getMagicMathColor(): Colors = Colors(
 )
 
 @Composable
-fun blinkWhite(): Color {
+fun blinkStar(): Color {
     val infiniteTransition = rememberInfiniteTransition(label = "blinkWhite")
     val color = if(isSystemInDarkTheme()) white else purple05
 
